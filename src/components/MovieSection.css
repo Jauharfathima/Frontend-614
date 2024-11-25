@@ -1,0 +1,14 @@
+.movie-section {
+    margin-top: 30px;
+  }
+  
+  .movie-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .movie-list {
+    display: flex;
+    gap: 20px;
+  }
+  
