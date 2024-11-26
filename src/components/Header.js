@@ -1,25 +1,41 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import "./MovieCard.css";
+import React, { useRef } from "react";
+import searchIcon from "../assets/search-icon.svg";
+import profileIcon from "../assets/profile-icon.svg";
+import "./Header.css";
 
-function MovieCard({ title, poster }) {
-  const navigate = useNavigate();
+function Header({ onSearch }) {
+  const searchInputRef = useRef(null);
 
-  const handleSelect = () => {
-    navigate(`/details/${title}`);
+  const handleIconClick = () => {
+    const query = searchInputRef.current.value;
+    onSearch(query);
+  };
+
+  const handleInputChange = (e) => {
+    onSearch(e.target.value);
   };
 
   return (
-    <div className="movie-card">
-      <div className="card-overlay">
-        <button className="select-button" onClick={handleSelect}>
-          Select
-        </button>
+    <header className="header">
+      <div className="logo">ACMEPLEX</div>
+      <div className="search-container">
+        <input
+          ref={searchInputRef}
+          type="text"
+          className="search-bar"
+          placeholder="Search Movie"
+          onChange={handleInputChange}
+        />
+        <img
+          src={searchIcon}
+          alt="Search"
+          className="search-icon"
+          onClick={handleIconClick}
+        />
       </div>
-      <img src={poster} alt={title} className="movie-poster" />
-      <div className="movie-title">{title}</div>
-    </div>
+      <img src={profileIcon} alt="Profile" className="profile-icon" />
+    </header>
   );
 }
 
-export default MovieCard;
+export default Header;
