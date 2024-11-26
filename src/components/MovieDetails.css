@@ -1,0 +1,24 @@
+.movie-details {
+    background-color: #1c1c1c;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .movie-details h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fdda2d;
+  }
+  
+  .movie-details p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 600px;
+  }
+  

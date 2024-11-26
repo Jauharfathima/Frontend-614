@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import MovieSection from "./components/MovieSection";
 import Footer from "./components/Footer";
+import MovieDetails from "./components/MovieDetails";
 import "./App.css";
 
 function App() {
@@ -33,13 +35,25 @@ function App() {
   }, {});
 
   return (
-    <div className="App">
-      <Header onSearch={handleSearch} />
-      {Object.entries(filteredMovies).map(([sectionTitle, sectionMovies]) => (
-        <MovieSection key={sectionTitle} title={sectionTitle} movies={sectionMovies} />
-      ))}
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header onSearch={handleSearch} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                {Object.entries(filteredMovies).map(([sectionTitle, sectionMovies]) => (
+                  <MovieSection key={sectionTitle} title={sectionTitle} movies={sectionMovies} />
+                ))}
+                <Footer />
+              </>
+            }
+          />
+          <Route path="/details/:movieTitle" element={<MovieDetails />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

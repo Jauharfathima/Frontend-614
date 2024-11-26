@@ -40,10 +40,6 @@
   opacity: 1;
 }
 
-.card-overlay.selected {
-  background-color: rgba(0, 128, 0, 0.7); /* Green overlay for selected cards */
-}
-
 .select-button {
   background-color: #fdda2d;
   color: black;
