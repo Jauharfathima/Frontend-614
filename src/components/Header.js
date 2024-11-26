@@ -1,35 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import logo from "../assets/acmeplex-logo.png";
 import searchIcon from "../assets/search-icon.svg";
 import profileIcon from "../assets/profile-icon.svg";
 import "./Header.css";
 
 function Header({ onSearch }) {
-  const [query, setQuery] = useState("");
-
   const handleInputChange = (e) => {
-    setQuery(e.target.value);
-    onSearch(e.target.value); // Update the search dynamically as the user types
-  };
-
-  const handleSearchClick = () => {
-    onSearch(query); // Trigger search when the icon is clicked
+    onSearch(e.target.value);
   };
 
   return (
     <header className="header">
-      <div className="logo">ACMEPLEX</div>
+      <img src={logo} alt="ACMEPLEX Logo" className="logo" />
       <div className="search-container">
-        <img
-          src={searchIcon}
-          alt="Search"
-          className="search-icon"
-          onClick={handleSearchClick} // Add click functionality
-        />
+        <img src={searchIcon} alt="Search" className="search-icon" />
         <input
           type="text"
           className="search-bar"
           placeholder="Search Movie"
-          value={query}
           onChange={handleInputChange}
         />
       </div>

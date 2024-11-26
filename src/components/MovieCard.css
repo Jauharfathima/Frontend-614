@@ -31,17 +31,18 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0; /* Default: Hidden */
+  opacity: 0;
   border-radius: 10px;
+  z-index: 1;
   transition: opacity 0.3s;
 }
 
 .movie-card:hover .card-overlay {
-  opacity: 1; /* Show overlay on hover */
+  opacity: 1;
 }
 
 .card-overlay.selected {
-  background-color: rgba(0, 128, 0, 0.7); /* Green overlay for selected cards */
+  background-color: rgba(0, 128, 0, 0.7);
 }
 
 .select-button {
