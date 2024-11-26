@@ -8,7 +8,7 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s;
 }
 
 .movie-card:hover .movie-poster {
@@ -31,13 +31,13 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0; /* Default: Hidden */
   border-radius: 10px;
-  opacity: 0;
   transition: opacity 0.3s;
 }
 
 .movie-card:hover .card-overlay {
-  opacity: 1;
+  opacity: 1; /* Show overlay on hover */
 }
 
 .card-overlay.selected {

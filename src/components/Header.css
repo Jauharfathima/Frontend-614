@@ -1,3 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
 .search-container {
   display: flex;
   align-items: center;
@@ -6,23 +18,18 @@
   border-radius: 25px;
 }
 
+.search-icon {
+  margin-right: 10px;
+  cursor: pointer; /* Make the search icon clickable */
+}
+
 .search-bar {
-  flex-grow: 1;
   background: none;
   border: none;
-  outline: none;
   color: white;
-  padding: 8px;
+  outline: none;
 }
 
-.search-icon {
+.profile-icon {
   width: 24px;
-  height: 24px;
-  cursor: pointer;
-  margin-left: 10px;
-  transition: transform 0.2s ease-in-out;
-}
-
-.search-icon:hover {
-  transform: scale(1.1);
 }
