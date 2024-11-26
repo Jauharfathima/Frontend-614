@@ -6,16 +6,18 @@ function MovieCard({ title, poster }) {
 
   const handleSelect = () => {
     setSelected(!selected);
-    alert(`Selected Movie: ${title}`);
+    alert(selected ? `Unselected: ${title}` : `Selected: ${title}`);
   };
 
   return (
     <div className="movie-card">
+      <div className={`card-overlay ${selected ? "selected" : ""}`}>
+        <button className="select-button" onClick={handleSelect}>
+          {selected ? "Unselect" : "Select"}
+        </button>
+      </div>
       <img src={poster} alt={title} className="movie-poster" />
       <div className="movie-title">{title}</div>
-      <button className="select-button" onClick={handleSelect}>
-        {selected ? "Unselect Movie" : "Select Movie"}
-      </button>
     </div>
   );
 }

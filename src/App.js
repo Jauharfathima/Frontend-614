@@ -24,6 +24,7 @@ function App() {
     ],
   };
 
+  // Filter movies based on the search query
   const filteredMovies = Object.keys(movies).reduce((result, section) => {
     result[section] = movies[section].filter((movie) =>
       movie.title.toLowerCase().includes(searchQuery)
