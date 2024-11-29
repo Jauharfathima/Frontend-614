@@ -7,6 +7,7 @@ import GuestHomepage from "./components/GuestHomepage"; // Guest User Homepage
 import SelectMoviePage from "./components/SelectMoviePage"; // Common movie page
 import SelectAdvanceMoviePage from "./components/SelectAdvanceMoviePage"; // Advance movie page
 import SelectTheatre from "./components/SelectTheatre";
+import SelectShowtime from "./components/SelectShowtime"; // Select Showtime page
 import "./App.css";
 
 function App() {
@@ -131,11 +132,13 @@ function App() {
               )
             }
           />
-          {/* Select Movie Page */}
+          {/* Select Movie Pages */}
           <Route path="/select-movie" element={<SelectMoviePage />} />
           <Route path="/select-advance-movie" element={<SelectAdvanceMoviePage />} />
           {/* Select Theatre Page */}
           <Route path="/select-theatre" element={<SelectTheatre />} />
+          {/* Select Showtime Page */}
+          <Route path="/select-showtime" element={<SelectShowtime />} />
         </Routes>
       </div>
     </Router>
