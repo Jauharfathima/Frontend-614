@@ -2,14 +2,13 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import "./MovieSection.css";
 
-function MovieSection({ title, movies }) {
+function MovieSection({ title, movies, onMovieClick }) {
   return (
     <section className="movie-section">
       <h2 className="section-title">{title}</h2>
       <div className="movie-list">
         {movies.map((movie, index) => (
-          <MovieCard key={index} title={movie.title} poster={movie.poster} 
-          genres={movie.genres} duration={movie.duration} synopsis={movie.synopsis} />
+          <MovieCard key={index} movie={movie} onClick={() => onMovieClick(movie)} />
         ))}
       </div>
     </section>

@@ -1,8 +1,9 @@
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between; /* Ensures spacing between the logo and search bar */
   padding: 20px;
+  background-color: #1c1c1c; /* Background color for the header */
 }
 
 .logo {
@@ -11,11 +12,11 @@
 }
 
 .search-container {
+  flex-grow: 1; /* Allows the search bar to occupy the remaining space */
   display: flex;
   align-items: center;
-  background-color: #333;
-  padding: 5px 15px;
-  border-radius: 25px;
+  justify-content: center; /* Centers the search bar */
+  max-width: 600px; /* Optional: Limit the search bar container width */
 }
 
 .search-icon {
@@ -27,8 +28,7 @@
   border: none;
   color: white;
   outline: none;
-}
-
-.profile-icon {
-  width: 24px;
+  font-size: 16px;
+  padding: 5px 10px;
+  width: 100%; /* Fills the available space */
 }

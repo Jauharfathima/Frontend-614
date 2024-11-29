@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../assets/acmeplex-logo.png";
 import searchIcon from "../assets/search-icon.svg";
-import profileIcon from "../assets/profile-icon.svg";
 import "./Header.css";
 
 function Header({ onSearch }) {
@@ -21,7 +20,6 @@ function Header({ onSearch }) {
           onChange={handleInputChange}
         />
       </div>
-      <img src={profileIcon} alt="Profile" className="profile-icon" />
     </header>
   );
 }

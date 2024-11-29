@@ -82,4 +82,11 @@
     height: auto;
     border-radius: 10px;
   }
+
+  .no-poster {
+    font-size: 16px;
+    color: #ccc;
+    text-align: center;
+  }
+  
   

@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"; 
 import { useLocation, useNavigate } from "react-router-dom";
 import "./SelectMovie.css";
 
@@ -16,12 +16,24 @@ function SelectMovie() {
   const duration = state?.duration || "N/A";
   const synopsis = state?.synopsis || "No synopsis available.";
 
+  // Navigate to Select Theatre Page
+  const handleBookTickets = () => {
+    navigate("/select-theatre", {
+      state: {
+        title, // Pass the movie title to Select Theatre page
+      },
+    });
+  };
+
   return (
     <div className="select-movie-container">
+      {/* Back Button */}
+      <button className="back-button" onClick={() => navigate(-1)}>
+        &#8592; Back
+      </button>
+
       <div className="movie-details">
-        <button className="back-button" onClick={() => navigate(-1)}>
-          &#8592;
-        </button>
+        {/* Genres */}
         <div className="movie-genres">
           {genres.map((genre, index) => (
             <span key={index} className="genre">
@@ -29,16 +41,19 @@ function SelectMovie() {
             </span>
           ))}
         </div>
+
+        {/* Title and Details */}
         <h1 className="movie-title">{title}</h1>
         <p className="movie-duration">{duration}</p>
         <p className="movie-synopsis">{synopsis}</p>
-        <button
-          className="book-tickets-button"
-          onClick={() => navigate("/select-theatre")}
-        >
+
+        {/* Book Tickets Button */}
+        <button className="book-tickets-button" onClick={handleBookTickets}>
           Book Tickets
         </button>
       </div>
+
+      {/* Poster Section */}
       <div className="movie-poster">
         {poster ? (
           <img src={poster} alt={title} className="poster-image" />
